@@ -5,21 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel APP - @yield('title')</title>
-    <?php /*
-     @vite(['resources/app.js']) 
-         
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-icons.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/fonts/google-material-simbols.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}"> 
-*/
+   
+    @vite(['resources/app.js']) 
+    <script src="{{ asset('assets/js/app.js') }}" defer></script>
 
-?>
-
-@vite(['resources/app.js']) 
-<script src="{{ asset('assets/js/app.js') }}" defer></script>
+    @vite(['resources/app.css']) 
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    
 
     
+  
 </head>
 
 <body>
@@ -37,13 +32,7 @@
 
         </div> <!-- END content -->
     </div> <!-- END wraper -->
-    <?php 
-    /*
-    <script src="{{ asset('assets/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}" ></script>
-    <script src="{{ asset('assets/js/app.js') }}" defer></script>
-    */
-    ?>
+    
     <div class="preloader-container">
         <div class="jumping-dots-loader"> 
             <span></span> <span></span> <span></span> 
