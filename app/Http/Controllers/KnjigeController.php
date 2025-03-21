@@ -43,18 +43,14 @@ class KnjigeController extends Controller
                 ->orderBy('year', 'desc')->get()->all(); 
 
     }
-    /**
-     * Display a listing of the resource.
-     */
+   
     public function index()
     {   
        // dd( $this->authors );
        return view('knjige.index', ['books' => $this->books, 'authors' => $this->authors ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         return view('knjige.create',
@@ -73,14 +69,7 @@ class KnjigeController extends Controller
         // Validacija poslatih podataka
         $validated = $request->validated();  //dd($validated);
 
-        // --- TRENUTNO NIJE POTREBNO
-        // Ako je potrebno konvertovati u string(json format) parametare koji predstavljaju niz, 
-        // koristi se funkcija json_encode(), nakon konverzije parametri su spremni za unos u bazu
-        // $validated['authors']    = json_encode( $request->validated()['authors'] );
-        // $validated['categories'] = json_encode( $request->validated()['categories'] );
-        // $validated['genres']     = json_encode( $request->validated()['genres'] );
-
-        //dd($validated);
+        
 
         $book = Books::create([
             'title' => $validated['title'],
@@ -103,17 +92,13 @@ class KnjigeController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(string $id)
     {
        return view( 'knjige.show', ['book' => Books::findOrFail($id)] ); 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+   
     public function edit(string $id)
     {
         return view( 'knjige.edit', 
@@ -123,9 +108,7 @@ class KnjigeController extends Controller
             ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(RulesBooksStore $request, string $id)
     {
         $validated = $request->validated();
@@ -158,9 +141,7 @@ class KnjigeController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(string $id)
     {
         $item_deleted = Books::findOrFail($id);
